@@ -8,6 +8,7 @@ import { CodigoPostalService } from './services/codigo-postal.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MaterialModule } from './material/material.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,

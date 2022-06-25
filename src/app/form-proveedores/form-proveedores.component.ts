@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Estado } from '../models/estado';
 import { Municipio } from '../models/municipio';
+import { Proveedor } from '../models/proveedor';
 import { CodigoPostalService } from '../services/codigo-postal.service';
+import { ProveedorService } from '../services/proveedor.service';
 
 @Component({
   selector: 'app-form-proveedores',
@@ -13,30 +15,20 @@ export class FormProveedoresComponent implements OnInit {
   public estados:Estado[] = [];
   public municipios:Municipio[] = [];
 
-  constructor(private codigoPostalService:CodigoPostalService) { }
+  public proveedor:Proveedor = new Proveedor();
+
+  constructor(private codigoPostalService:CodigoPostalService,
+    private proveedorService:ProveedorService) { }
 
   ngOnInit(): void {
     let estado = new Estado();
     this.codigoPostalService.findAllEstados().subscribe(
       e => {
-        // estado.clave = e.cla
-        // this.estados.push()
-        console.log(e.respuesta.estados);
-
+        // console.log(e.respuesta.estados);
         this.estados = e.respuesta.estados;
       }
-      
     )
   }
-
-  showEstados(){
-    console.log(this.estados);
-
-    for(let e of this.estados){
-      console.log(e.clave);
-    }
-  }
-
   clickEstadosSelect(claveEstado:string){
     console.log(claveEstado);
     this.codigoPostalService.getMunicipiosByEstado(claveEstado).subscribe(
@@ -46,5 +38,17 @@ export class FormProveedoresComponent implements OnInit {
       }
     )
   }
+
+  save():void{
+    console.log("saving..."+this.proveedor.toString());
+
+    this.proveedorService.create(this.proveedor).subscribe(
+      response => {
+        console.log(response)
+      }
+    )
+  }
+
+
 
 }

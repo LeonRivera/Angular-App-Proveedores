@@ -15,7 +15,7 @@
         <p class="col-span-3">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>RFC</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.rfc" matInput placeholder="Placeholder" />
             <!-- <mat-icon matPrefix></mat-icon> -->
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -24,7 +24,7 @@
         <p  class="col-span-5">
           <mat-form-field class="mat-forn-w-100"   appearance="outline">
             <mat-label>Razon social:</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.razonSocial" matInput placeholder="Placeholder" />
             <!-- <mat-icon matPrefix></mat-icon> -->
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -32,7 +32,7 @@
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Nombre de contacto</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.nombreContacto"  matInput placeholder="Placeholder" />
             <mat-icon matPrefix>person</mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -40,7 +40,7 @@
         <p class="col-span-4 lg:col-span-3">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Calle</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.calle" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -48,7 +48,7 @@
         <p class="col-span-4 lg:col-span-1">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>No int</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.noInt" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -56,7 +56,7 @@
         <p class="col-span-4 lg:col-span-1">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>No ext</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.noExt" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -65,7 +65,7 @@
         <p class="col-span-4 lg:col-span-3">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Colonia</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.colonia" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -73,7 +73,7 @@
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Localidad/Delegacion</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.localidadDelegacion" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -81,23 +81,23 @@
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Entidad</mat-label>
-            <mat-select name="food">
-                <mat-option (click)="clickEstadosSelect(e.clave)" value="{{e.clave}}" *ngFor="let e of estados">{{e.estado}}</mat-option>
+            <mat-select [(ngModel)]="proveedor.entidad" name="food">
+                <mat-option  (click)="clickEstadosSelect(e.clave)" value="{{e.estado}}" *ngFor="let e of estados">{{e.estado}}</mat-option>
             </mat-select>
           </mat-form-field>
         </p>
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Municipio</mat-label>
-            <mat-select name="food">
-                <mat-option value="{{e.clave}}" *ngFor="let e of municipios">{{e.municipio}}</mat-option>
+            <mat-select [(ngModel)]="proveedor.municipio" name="food">
+                <mat-option value="{{e.municipio}}" *ngFor="let e of municipios">{{e.municipio}}</mat-option>
             </mat-select>
           </mat-form-field>
         </p>
         <p class="col-span-4 md:col-span-2">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Pais</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.pais" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -105,7 +105,7 @@
         <p class="col-span-4 md:col-span-2">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Codigo Postal</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.codigoPostal" matInput placeholder="Placeholder" />
             <mat-icon matPrefix></mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -113,7 +113,7 @@
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Correo electronico</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.correoElectronico" matInput placeholder="Placeholder" />
             <mat-icon matPrefix>mail</mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -121,7 +121,7 @@
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Telefono</mat-label>
-            <input matInput placeholder="Placeholder" />
+            <input [(ngModel)]="proveedor.telefono" matInput placeholder="Placeholder" />
             <mat-icon matPrefix>phone</mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
@@ -129,7 +129,7 @@
         <p class="col-span-4">
           <mat-form-field class="mat-forn-w-100" appearance="outline">
             <mat-label>Estatus</mat-label>
-            <mat-select name="food">
+            <mat-select [(ngModel)]="proveedor.estatus" name="food">
                 <mat-option value="activo">Activo</mat-option>
                 <mat-option value="inactivo">Inactivo</mat-option>
                 <mat-option value="moroso">Moroso</mat-option>
@@ -141,7 +141,7 @@
         
       </div>
   
-      <button (click)="showEstados()" class="btn-guardar" mat-raised-button color="accent">
+      <button (click)="save()"  class="btn-guardar" mat-raised-button color="accent">
         Guardar/Actualizar
       </button>
     </mat-card-content>
