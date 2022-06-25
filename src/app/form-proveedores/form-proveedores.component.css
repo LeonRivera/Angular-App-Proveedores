@@ -1,0 +1,26 @@
+button{
+    margin: 3rem;
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
+
+mat-sidenav{
+    background-color: lightcoral;
+    width: 200px;
+}
+
+
+/* mat-grid-tile-content{
+    justify-content: start !important;
+} */
+/* [matInput]{
+    width: 100%;
+} */
+
+
+.mat-forn-w-100{
+    width: 100% !important;
+}
+

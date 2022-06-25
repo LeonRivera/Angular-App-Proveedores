@@ -3,16 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormProveedoresComponent } from './form-proveedores/form-proveedores.component';
+import { CodigoPostalService } from './services/codigo-postal.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormProveedoresComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    MaterialModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CodigoPostalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

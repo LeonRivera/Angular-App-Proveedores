@@ -1,0 +1,12 @@
+{
+    "/apipostal/*": {
+        "target": "https://apicp.softfortoday.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/apipostal":"https://apicp.softfortoday.com"
+        }
+        
+    }
+}
