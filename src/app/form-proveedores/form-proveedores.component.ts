@@ -41,7 +41,6 @@ export class FormProveedoresComponent implements OnInit {
 
   save():void{
     console.log("saving..."+this.proveedor.toString());
-
     this.proveedorService.create(this.proveedor).subscribe(
       response => {
         console.log(response)

@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
+import { ProveedoresComponent } from './proveedores/proveedores.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormProveedoresComponent
+    FormProveedoresComponent,
+    ProveedoresComponent
   ],
   imports: [
     BrowserModule,

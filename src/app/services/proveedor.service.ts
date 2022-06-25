@@ -19,8 +19,8 @@ export class ProveedorService {
     private router:Router) { }
 
 
-  getProveedores():Observable<Proveedor>{
-    return this.httpClient.get<Proveedor>(this.devBaseUrl);
+  getProveedores():Observable<Proveedor[]>{
+    return this.httpClient.get<Proveedor[]>(this.devBaseUrl);
   }
 
   create(proveedor:Proveedor):Observable<any>{
