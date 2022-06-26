@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -35,7 +36,8 @@ const MaterialComponents = [
   MatFormFieldModule,
   MatCardModule,
   MatSelectModule,
-  MatTableModule
+  MatTableModule,
+  MatTabsModule
 ]
 
 

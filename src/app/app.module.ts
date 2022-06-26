@@ -10,12 +10,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { FormUsersComponent } from './form-users/form-users.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { LogrouterComponent } from './logrouter/logrouter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormProveedoresComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    FormUsersComponent,
+    LoginComponent,
+    HeaderComponent,
+    LogrouterComponent
   ],
   imports: [
     BrowserModule,

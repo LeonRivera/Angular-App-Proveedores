@@ -1,148 +1,203 @@
-<mat-toolbar color="primary">
-    <span>Administrador de Proveedores</span>
-  </mat-toolbar>
-  
-  <mat-card>
-    <mat-card-title> </mat-card-title>
-    <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
-    <mat-card-actions>
-      <button mat-button>Proveedor</button>
-      <button mat-button>Buscar</button>
-    </mat-card-actions>
-  
-    <mat-card-content>
-      <div class="grid grid-cols-12 gap-4">
-        <p class="col-span-3">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>RFC</mat-label>
-            <input [(ngModel)]="proveedor.rfc" matInput placeholder="Placeholder" />
-            <!-- <mat-icon matPrefix></mat-icon> -->
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-  
-        <p  class="col-span-5">
-          <mat-form-field class="mat-forn-w-100"   appearance="outline">
-            <mat-label>Razon social:</mat-label>
-            <input [(ngModel)]="proveedor.razonSocial" matInput placeholder="Placeholder" />
-            <!-- <mat-icon matPrefix></mat-icon> -->
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Nombre de contacto</mat-label>
-            <input [(ngModel)]="proveedor.nombreContacto"  matInput placeholder="Placeholder" />
-            <mat-icon matPrefix>person</mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4 lg:col-span-3">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Calle</mat-label>
-            <input [(ngModel)]="proveedor.calle" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4 lg:col-span-1">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>No int</mat-label>
-            <input [(ngModel)]="proveedor.noInt" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4 lg:col-span-1">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>No ext</mat-label>
-            <input [(ngModel)]="proveedor.noExt" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-  
-        <p class="col-span-4 lg:col-span-3">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Colonia</mat-label>
-            <input [(ngModel)]="proveedor.colonia" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Localidad/Delegacion</mat-label>
-            <input [(ngModel)]="proveedor.localidadDelegacion" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Entidad</mat-label>
-            <mat-select [(ngModel)]="proveedor.entidad" name="food">
-                <mat-option  (click)="clickEstadosSelect(e.clave)" value="{{e.estado}}" *ngFor="let e of estados">{{e.estado}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Municipio</mat-label>
-            <mat-select [(ngModel)]="proveedor.municipio" name="food">
-                <mat-option value="{{e.municipio}}" *ngFor="let e of municipios">{{e.municipio}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </p>
-        <p class="col-span-4 md:col-span-2">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Pais</mat-label>
-            <input [(ngModel)]="proveedor.pais" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4 md:col-span-2">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Codigo Postal</mat-label>
-            <input [(ngModel)]="proveedor.codigoPostal" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix></mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Correo electronico</mat-label>
-            <input [(ngModel)]="proveedor.correoElectronico" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix>mail</mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Telefono</mat-label>
-            <input [(ngModel)]="proveedor.telefono" matInput placeholder="Placeholder" />
-            <mat-icon matPrefix>phone</mat-icon>
-            <!-- <mat-hint>Hint</mat-hint> -->
-          </mat-form-field>
-        </p>
-        <p class="col-span-4">
-          <mat-form-field class="mat-forn-w-100" appearance="outline">
-            <mat-label>Estatus</mat-label>
-            <mat-select [(ngModel)]="proveedor.estatus" name="food">
-                <mat-option value="activo">Activo</mat-option>
-                <mat-option value="inactivo">Inactivo</mat-option>
-                <mat-option value="moroso">Moroso</mat-option>
-              
-            </mat-select>
-          </mat-form-field>
-        </p>
-  
-        
-      </div>
-  
-      <button (click)="save()"  class="btn-guardar" mat-raised-button color="accent">
-        Guardar/Actualizar
-      </button>
-    </mat-card-content>
-  </mat-card>
+<mat-card>
+  <mat-card-title> </mat-card-title>
+  <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+  <mat-card-actions>
+    <button mat-button>Proveedor</button>
+    <button mat-button>Buscar</button>
+  </mat-card-actions>
+
+  <mat-card-content>
+    <div class="grid grid-cols-12 gap-4">
+      <p class="col-span-3">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>RFC</mat-label>
+          <input
+            [(ngModel)]="proveedor.rfc"
+            matInput
+            placeholder="Placeholder"
+          />
+          <!-- <mat-icon matPrefix></mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+
+      <p class="col-span-5">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Razon social:</mat-label>
+          <input
+            [(ngModel)]="proveedor.razonSocial"
+            matInput
+            placeholder="Placeholder"
+          />
+          <!-- <mat-icon matPrefix></mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Nombre de contacto</mat-label>
+          <input
+            [(ngModel)]="proveedor.nombreContacto"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix>person</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4 lg:col-span-3">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Calle</mat-label>
+          <input
+            [(ngModel)]="proveedor.calle"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4 lg:col-span-1">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>No int</mat-label>
+          <input
+            [(ngModel)]="proveedor.noInt"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4 lg:col-span-1">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>No ext</mat-label>
+          <input
+            [(ngModel)]="proveedor.noExt"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+
+      <p class="col-span-4 lg:col-span-3">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Colonia</mat-label>
+          <input
+            [(ngModel)]="proveedor.colonia"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Localidad/Delegacion</mat-label>
+          <input
+            [(ngModel)]="proveedor.localidadDelegacion"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Entidad</mat-label>
+          <mat-select [(ngModel)]="proveedor.entidad" name="food">
+            <mat-option
+              (click)="clickEstadosSelect(e.clave)"
+              value="{{ e.estado }}"
+              *ngFor="let e of estados"
+              >{{ e.estado }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Municipio</mat-label>
+          <mat-select [(ngModel)]="proveedor.municipio" name="food">
+            <mat-option
+              value="{{ e.municipio }}"
+              *ngFor="let e of municipios"
+              >{{ e.municipio }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p class="col-span-4 md:col-span-2">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Pais</mat-label>
+          <input
+            [(ngModel)]="proveedor.pais"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4 md:col-span-2">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Codigo Postal</mat-label>
+          <input
+            [(ngModel)]="proveedor.codigoPostal"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Correo electronico</mat-label>
+          <input
+            [(ngModel)]="proveedor.correoElectronico"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix>mail</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Telefono</mat-label>
+          <input
+            [(ngModel)]="proveedor.telefono"
+            matInput
+            placeholder="Placeholder"
+          />
+          <mat-icon matPrefix>phone</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p class="col-span-4">
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Estatus</mat-label>
+          <mat-select [(ngModel)]="proveedor.estatus" name="food">
+            <mat-option value="activo">Activo</mat-option>
+            <mat-option value="inactivo">Inactivo</mat-option>
+            <mat-option value="moroso">Moroso</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+    </div>
+
+    <button
+      (click)="save()"
+      class="btn-guardar"
+      mat-raised-button
+      color="accent"
+    >
+      Guardar/Actualizar
+    </button>
+  </mat-card-content>
+</mat-card>
