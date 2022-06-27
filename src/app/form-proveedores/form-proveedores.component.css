@@ -1,5 +1,5 @@
 button{
-    margin: 3rem;
+    /* margin: 3rem; */
 }
 
 mat-sidenav-container{
@@ -20,7 +20,4 @@ mat-sidenav{
 } */
 
 
-.mat-forn-w-100{
-    width: 100% !important;
-}
 

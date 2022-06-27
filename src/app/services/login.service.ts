@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { User } from '../models/user';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,7 @@ export class LoginService {
           .pipe(
             catchError(e => {
               console.log(e);
-              // Swal.fire('Error al autenticar', e.error.message, 'error');
+              Swal.fire('Error al autenticar', e.error.message, 'error');
               return throwError(e);
             }) 
           )
@@ -47,11 +48,11 @@ export class LoginService {
             if(response === true){
               sessionStorage.setItem('logged', 'true');
             }else{
-              // Swal.fire('Login', "usuario o contraseña incorrectos", 'error');
+              Swal.fire('Login', "usuario o contraseña incorrectos", 'error');
               sessionStorage.setItem('logged', 'false');
             }
     
-            this.router.navigate(['users']);
+            this.router.navigate(['provrouter']);
           });
     
         

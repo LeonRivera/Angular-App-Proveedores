@@ -1,21 +1,23 @@
-<mat-card-content>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Username</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-  </p>
-
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="Placeholder" />
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    </mat-form-field>
-  </p>
-</mat-card-content>
-<mat-card-actions>
-  <button mat-button>Login</button>
-  <!-- <button mat-button>SHARE</button> -->
-</mat-card-actions>
+<div class="lr-container">
+<!-- <mat-card-content> -->
+    <p>
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Username</mat-label>
+          <input [(ngModel)]="username" type="email" matInput placeholder="Placeholder" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+    
+      <p>
+        <mat-form-field class="mat-forn-w-100" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input [(ngModel)]="password" type="password"  matInput placeholder="Placeholder" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+    <!-- </mat-card-content> -->
+    <!-- <mat-card-actions class="mca"> -->
+      <button class="mat-b-100" mat-button (click)="login()">Login</button>
+      <!-- <button mat-button>SHARE</button> -->
+    <!-- </mat-card-actions> -->
+</div>

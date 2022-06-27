@@ -14,6 +14,7 @@ import { FormUsersComponent } from './form-users/form-users.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { LogrouterComponent } from './logrouter/logrouter.component';
+import { ProvrouterComponent } from './provrouter/provrouter.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LogrouterComponent } from './logrouter/logrouter.component';
     FormUsersComponent,
     LoginComponent,
     HeaderComponent,
-    LogrouterComponent
+    LogrouterComponent,
+    ProvrouterComponent
   ],
   imports: [
     BrowserModule,

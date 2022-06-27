@@ -1,6 +1,32 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <span>Administrador de Proveedores</span>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<mat-sidenav-container>
+  <!-- modes: 
+      over (default) 
+      push
+      side-->
+  <mat-sidenav mode="over" [(opened)]="opened">
+    
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="navbar">
+      <div class="menu-logo">
+        <mat-icon class="mat-icon-menu" (click)="opened=!opened">menu</mat-icon>
+        <h1>LeonRV3</h1>
+
+      </div>
+      <div>
+        <span>Home</span>
+        <span>About</span>
+        <span>Services</span>
+      </div>
+    </mat-toolbar>
+    <!-- <button (click)="opened=!opened">Toogle Opened</button> -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 <!-- <nav mat-tab-nav-bar [tabPanel]="tabPanel">
   <a mat-tab-link [routerLink]="['/proveedores/form']">Proveedores Form</a>

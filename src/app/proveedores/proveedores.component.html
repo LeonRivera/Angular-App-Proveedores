@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="proveedores" class="mat-elevation-z8">
+<table mat-table [dataSource]="proveedores" class="mat-elevation-z8 table-proveedores">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -25,6 +25,14 @@
     <ng-container matColumnDef="Telefono">
       <th mat-header-cell *matHeaderCellDef> Telefono </th>
       <td mat-cell *matCellDef="let p"> {{p.telefono}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let p">
+        <mat-icon [routerLink]="['/proveedores/form/', p.rfc]" class="mi-edit" aria-hidden="false" aria-label="">edit</mat-icon>
+        <mat-icon (click)="delete(p)" class="mi-delete" aria-hidden="false" aria-label="">delete</mat-icon>
+      </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

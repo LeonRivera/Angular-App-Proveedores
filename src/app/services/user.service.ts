@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, Observable, throwError } from 'rxjs';
 import { User } from '../models/user';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class UserService {
       return this.http.get<User>(`${this.prodUrl}${username}`, {headers: this.httpHeaders})
       .pipe(
         catchError(e => {
-          // Swal.fire('Error al buscar', e.error.message, 'error');
+          Swal.fire('Error al buscar', e.error.message, 'error');
           return throwError(e);
         })
       )
@@ -34,7 +35,7 @@ export class UserService {
       return this.http.post<User>(this.prodUrl, user, {headers: this.httpHeaders})
       .pipe(
         catchError(e => {
-          // Swal.fire('Error al crear', e.error.message, 'error');
+          Swal.fire('Error al crear', e.error.message, 'error');
           return throwError(e);
         })
       );
@@ -43,7 +44,7 @@ export class UserService {
     update(user:User):Observable<any>{
       return this.http.put<any>(this.prodUrl, user, {headers:this.httpHeaders}).pipe(
         catchError(e => {
-          // Swal.fire('Error al editar', e.error.message, 'error');
+          Swal.fire('Error al editar', e.error.message, 'error');
           return throwError(e);
         })
       );
@@ -55,7 +56,7 @@ export class UserService {
       return this.http.request<any>('delete',this.prodUrl, {body: user})
       .pipe(
           catchError(e => {
-            // Swal.fire('Error al eliminar', e.error.message, 'error');
+            Swal.fire('Error al eliminar', e.error.message, 'error');
             return throwError(e);
           })
       )

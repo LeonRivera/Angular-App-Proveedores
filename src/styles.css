@@ -5,3 +5,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.lr-container{
+    margin: 1rem;
+}
+
+div.mat-tab-labels{
+    justify-content: center;
+}
+
+.mat-forn-w-100{
+    width: 100% !important;
+}
+
+.mat-b-100{
+    width: 100%!important;
+}

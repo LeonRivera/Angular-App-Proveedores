@@ -1,0 +1,31 @@
+<!-- <mat-card class="example-card" [@routeAnimations]="prepareRoute(outlet)"> -->
+<mat-card class="proveedor-card">
+  <!-- <mat-card-header> -->
+    <mat-toolbar color="accent">
+        <mat-icon aria-hidden="false" aria-label="">edit</mat-icon>
+      <span>Administrador de Proveedores</span>
+    </mat-toolbar>
+  <!-- </mat-card-header> -->
+  <!-- <mat-card-header class="mch"> -->
+  <!-- <nav  mat-tab-nav-bar [tabPanel]="tabPanel">
+            <a mat-tab-link 
+            *ngFor="let link of links"
+            (click)="activeLink = link"
+            [active]="activeLink == link"
+            [routerLink]="link">{{link}}</a>
+          </nav> -->
+  <!-- <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
+
+  <mat-tab-group class="mtg">
+    <mat-tab class="mtl" label="Proveedor">
+      <app-form-proveedores></app-form-proveedores>
+    </mat-tab>
+    <mat-tab class="mtl" label="Buscar">
+      <app-proveedores></app-proveedores>
+    </mat-tab>
+  </mat-tab-group>
+  <!-- </mat-card-header> -->
+
+  <!-- Router outlet for mat tab nav bar -->
+  <!-- <router-outlet #outlet="outlet"></router-outlet> -->
+</mat-card>

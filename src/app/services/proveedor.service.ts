@@ -23,6 +23,15 @@ export class ProveedorService {
     return this.httpClient.get<Proveedor[]>(this.devBaseUrl);
   }
 
+  getProveedorByRfc(rfc:string):Observable<Proveedor>{
+    return this.httpClient.get<Proveedor>(`${this.devBaseUrl}/${rfc}`)
+    .pipe(
+      catchError(e => {
+        return throwError(e);
+      })
+    );
+  }
+
   create(proveedor:Proveedor):Observable<any>{
     return this.httpClient.post<Proveedor>(this.devBaseUrl, proveedor)
     .pipe(
@@ -41,7 +50,7 @@ export class ProveedorService {
     )
   }
 
-  delete(rfc:string):Observable<any>{
+  deleteByRfc(rfc:string):Observable<any>{
     return this.httpClient.delete(`${this.devBaseUrl}/${rfc}`)
     .pipe(
       catchError(e => {

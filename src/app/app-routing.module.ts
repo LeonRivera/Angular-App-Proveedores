@@ -5,6 +5,7 @@ import { FormUsersComponent } from './form-users/form-users.component';
 import { LoginComponent } from './login/login.component';
 import { LogrouterComponent } from './logrouter/logrouter.component';
 import { ProveedoresComponent } from './proveedores/proveedores.component';
+import { ProvrouterComponent } from './provrouter/provrouter.component';
 
 const routes: Routes = [
   // {path: '', component:ProveedoresComponent},
@@ -14,7 +15,9 @@ const routes: Routes = [
     {path: 'Register', component: FormUsersComponent}
   ]},
   {path: 'users/form', component: FormUsersComponent},
+  {path: 'provrouter', component: ProvrouterComponent},
   {path: 'users/form/:username', component: FormUsersComponent},
+  {path: 'proveedores', component:ProveedoresComponent},
   {path: 'proveedores/form', component:FormProveedoresComponent},
   {path: 'proveedores/form/:rfc', component:FormProveedoresComponent}
 ];

@@ -1,0 +1,14 @@
+.table-proveedores{
+    width: 100%!important;
+}
+
+.mi-edit:hover{
+    cursor:pointer;
+    color: blue;
+}
+
+.mi-delete:hover{
+    color: red;
+    cursor:pointer;
+
+}

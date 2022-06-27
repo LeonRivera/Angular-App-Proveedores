@@ -2,8 +2,8 @@
   <mat-card-title> </mat-card-title>
   <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
   <mat-card-actions>
-    <button mat-button>Proveedor</button>
-    <button mat-button>Buscar</button>
+    <!-- <button mat-button>Proveedor</button>
+    <button mat-button>Buscar</button> -->
   </mat-card-actions>
 
   <mat-card-content>
@@ -191,13 +191,26 @@
       </p>
     </div>
 
-    <button
+
+    <button *ngIf="updatingProveedor else elseBlockButton"
+      (click)="update()"
+      class="btn-guardar"
+      mat-raised-button
+      color="accent"
+    >
+      Actualizar
+    </button>
+
+    <ng-template #elseBlockButton>
+      <button
       (click)="save()"
       class="btn-guardar"
       mat-raised-button
       color="accent"
     >
-      Guardar/Actualizar
+      Guardar
     </button>
+    </ng-template>
+    
   </mat-card-content>
 </mat-card>

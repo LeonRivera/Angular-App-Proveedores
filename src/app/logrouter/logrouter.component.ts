@@ -16,6 +16,7 @@ export class LogrouterComponent implements OnInit {
 
   constructor(private router:Router) { }
 
+  //links in the app-routing-module
   links = ['Login', 'Register'];
   activeLink = this.links[0];
 

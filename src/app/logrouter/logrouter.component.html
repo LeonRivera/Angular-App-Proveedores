@@ -1,14 +1,27 @@
-<mat-card class="example-card" [@routeAnimations]="prepareRoute(outlet)">
-  <mat-card-header class="mch">
-    <nav  mat-tab-nav-bar [tabPanel]="tabPanel">
+<!-- <mat-card class="example-card" [@routeAnimations]="prepareRoute(outlet)"> -->
+<mat-card class="example-card">
+  <!-- <mat-card-header class="mch"> -->
+    <!-- <nav  mat-tab-nav-bar [tabPanel]="tabPanel">
       <a mat-tab-link 
       *ngFor="let link of links"
       (click)="activeLink = link"
       [active]="activeLink == link"
       [routerLink]="link">{{link}}</a>
-    </nav>
-    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+    </nav> -->
+    <!-- <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
 
-  </mat-card-header>
-  <router-outlet #outlet="outlet"></router-outlet>
+
+    <mat-tab-group class="mtg">
+      <mat-tab class="mtl" label="Login">
+        <app-login></app-login>
+      </mat-tab>
+      <mat-tab class="mtl" label="Register">
+        <app-form-users></app-form-users>
+      </mat-tab>
+    </mat-tab-group>
+
+  <!-- </mat-card-header> -->
+
+  <!-- Router outlet for mat tab nav bar -->
+  <!-- <router-outlet #outlet="outlet"></router-outlet> -->
 </mat-card>

@@ -1,0 +1,28 @@
+.navbar{
+    justify-content: space-between;
+}
+
+span{
+    padding-right: 1rem;
+}
+
+mat-sidenav{
+    background-color: lightcoral;
+    width: 200px;
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
+
+.menu-logo{
+    display:flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.mat-icon-menu:hover{
+    cursor: pointer;
+}
+.menu-logo>h1{
+    margin-left: 1rem;
+}

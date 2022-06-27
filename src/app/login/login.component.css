@@ -1,4 +1,9 @@
-.example-card {
-    max-width: 400px;
+
+  .mca{
+    padding: 0!important;
   }
-  
+
+  .mca>button{
+    width: 100%!important;
+    padding: 0!important;
+  }

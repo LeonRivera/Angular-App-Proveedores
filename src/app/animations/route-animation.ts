@@ -9,8 +9,8 @@ import {
     keyframes,
 } from '@angular/animations'
 
-//basic
- export const fader = 
- trigger('routeAnimations', [
-    transition('* <=> *')
- ])
+// //basic
+//  export const fader = 
+//  trigger('routeAnimations', [
+//     transition('* <=> *')
+//  ])
