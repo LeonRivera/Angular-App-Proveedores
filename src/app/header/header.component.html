@@ -7,13 +7,21 @@
       over (default) 
       push
       side-->
-  <mat-sidenav mode="over" [(opened)]="opened">
+  <mat-sidenav color="primary" mode="over" [(opened)]="opened">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png" alt="">
+    <mat-divider></mat-divider>
+    <div class="sidenav-menu">
+      <button mat-raised-button color="accent">Login</button>
+      <button mat-raised-button color="accent">Register</button>
+      <button mat-raised-button color="accent">Proveedores</button>
+    </div>
     
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="navbar">
       <div class="menu-logo">
         <mat-icon class="mat-icon-menu" (click)="opened=!opened">menu</mat-icon>
+        
         <h1>LeonRV3</h1>
 
       </div>

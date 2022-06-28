@@ -12,7 +12,7 @@ export class ProveedorService {
 
   private httpHeaders = new HttpHeaders({'Content-type':'application/json'});
   private devBaseUrl: string = "http://localhost:9069/proveedores";
-  // private devProdUrl: string = "http://localhost:9069/proveedores";
+  private devProdUrl: string = "https://firebase-u-api-lrv.herokuapp.com/proveedores";
 
 
   constructor(private httpClient:HttpClient,
@@ -20,11 +20,11 @@ export class ProveedorService {
 
 
   getProveedores():Observable<Proveedor[]>{
-    return this.httpClient.get<Proveedor[]>(this.devBaseUrl);
+    return this.httpClient.get<Proveedor[]>(this.devProdUrl);
   }
 
   getProveedorByRfc(rfc:string):Observable<Proveedor>{
-    return this.httpClient.get<Proveedor>(`${this.devBaseUrl}/${rfc}`)
+    return this.httpClient.get<Proveedor>(`${this.devProdUrl}/${rfc}`)
     .pipe(
       catchError(e => {
         return throwError(e);
@@ -33,7 +33,7 @@ export class ProveedorService {
   }
 
   create(proveedor:Proveedor):Observable<any>{
-    return this.httpClient.post<Proveedor>(this.devBaseUrl, proveedor)
+    return this.httpClient.post<Proveedor>(this.devProdUrl, proveedor)
     .pipe(
       catchError(e => {
         return throwError(e);
@@ -42,7 +42,7 @@ export class ProveedorService {
   }
 
   update(proveedor:Proveedor):Observable<any>{
-    return this.httpClient.put<Proveedor>(this.devBaseUrl, proveedor)
+    return this.httpClient.put<Proveedor>(this.devProdUrl, proveedor)
     .pipe(
       catchError(e => {
         return throwError(e);
@@ -51,7 +51,7 @@ export class ProveedorService {
   }
 
   deleteByRfc(rfc:string):Observable<any>{
-    return this.httpClient.delete(`${this.devBaseUrl}/${rfc}`)
+    return this.httpClient.delete(`${this.devProdUrl}/${rfc}`)
     .pipe(
       catchError(e => {
         return throwError(e);

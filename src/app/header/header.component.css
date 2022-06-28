@@ -7,8 +7,11 @@ span{
 }
 
 mat-sidenav{
-    background-color: lightcoral;
+    background-color: #1976D2;
+    padding: 1rem;
     width: 200px;
+    border-top-right-radius: 25px;
+    /* border-bottom-right-radius: 25px; */
 }
 
 mat-sidenav-container{
@@ -25,4 +28,13 @@ mat-sidenav-container{
 }
 .menu-logo>h1{
     margin-left: 1rem;
+}
+.sidenav-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.sidenav-menu>button{
+    margin-bottom: 1rem;
 }

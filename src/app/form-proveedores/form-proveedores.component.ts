@@ -27,17 +27,16 @@ export class FormProveedoresComponent implements OnInit {
   ngOnInit(): void {
     this.updatingProveedor = this.loadRouteDataParam();
 
-      let estado = new Estado();
-      this.codigoPostalService.findAllEstados().subscribe((e) => {
-        // console.log(e.respuesta.estados);
-        this.estados = e.respuesta.estados;
-      });
+    let estado = new Estado();
+    this.codigoPostalService.findAllEstados().subscribe((e) => {
+      // console.log(e.respuesta.estados);
+      this.estados = e.respuesta.estados;
+    });
 
-
-      // Mandar a llamar al municipio tambien
-      // if(this.updatingProveedor){
-      //   this.clickEstadosSelect(this.proveedor.)
-      // }
+    // Mandar a llamar al municipio tambien
+    // if(this.updatingProveedor){
+    //   this.clickEstadosSelect(this.proveedor.)
+    // }
   }
   clickEstadosSelect(claveEstado: string) {
     // console.log(claveEstado);
@@ -60,6 +59,7 @@ export class FormProveedoresComponent implements OnInit {
   update(): void {
     this.proveedorService.update(this.proveedor).subscribe((r) => {
       console.log(r);
+      this.router.navigate(['provrouter']);
     });
   }
 
